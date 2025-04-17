@@ -13,7 +13,6 @@ export class OrdersController {
 
   @MessagePattern('createOrders')
   create(@Payload() createOrderDto: CreateOrderDto) {
-    console.log('xdxdxd');
     return this.ordersService.create(createOrderDto);
   }
 
@@ -23,7 +22,7 @@ export class OrdersController {
   }
 
   @MessagePattern('findOneOrder')
-  findOne(@Payload('íd', ParseUUIDPipe) id: string) {
+  findOne(@Payload('id', ParseUUIDPipe) id: string) {
     return this.ordersService.findOne(id);
   }
 

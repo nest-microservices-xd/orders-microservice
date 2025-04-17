@@ -13,7 +13,6 @@ export class OrdersService extends PrismaClient implements OnModuleInit {
   }
 
   create(createOrderDto: CreateOrderDto) {
-    this.logger.log('Recibiendo createOrderDto: ', createOrderDto);
     return this.order.create({
       data: createOrderDto,
     });
